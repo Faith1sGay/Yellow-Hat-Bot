@@ -111,4 +111,4 @@ client.on('message', message => {
 }};
 
 
-client.login('NTY5OTcwMzExMDAxMjc2NDE2.XL5C-Q.v_nvdP1BPalmlNr5yLQBWlXU9LI')
+client.login('BOTTOKEN')
