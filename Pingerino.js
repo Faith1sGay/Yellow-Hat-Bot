@@ -38,15 +38,7 @@ client.on('message', message => {
     if (user) {
       const member = message.guild.member(user);
       if (member) {
-        /**
 
-         * Kick the member
-
-         * Make sure you run this on a member, not a user!
-
-         * There are big differences between a user and a member
-
-         */
         member.kick('Optional reason that will display in the audit logs').then(() => {
           message.reply(`Successfully kicked ${user.tag}`);
         }).catch(err => {
@@ -69,19 +61,6 @@ client.on('message', message => {
       const member = message.guild.member(user);
 
       if (member) {
-        /**
-
-         * Ban the member
-
-         * Make sure you run this on a member, not a user!
-
-         * There are big differences between a user and a member
-
-         * Read more about what ban options there are over at
-
-         * https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=ban
-
-         */
         member.ban({
           reason: 'They were bad!',
         }).then(() => {
@@ -109,5 +88,9 @@ client.on('message', message => {
 	if (message.content.startsWith(`${prefix}support`)) {
 		message.channel.send('https://discord.gg/6jJx4RX')
 }});
+client.on('message', message => {
+  if (!message.guild) return;
+if (message.content.startsWith(`${prefix}help`)) {
+message.channel.send('Here is my commands! All must be prefixed with y? help ping latency ban kick support rip')  
+}});
 client.login(token);
-
