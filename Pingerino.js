@@ -12,7 +12,7 @@ client.on('message', message => {
     message.channel.send('pong');
   }
 });
-const { Client, Attachment } 
+const { Client, Attachment } = require("discord.js");
 client.on('message', message => {
   if (message.content === `${prefix}avatar`) {
     message.reply(message.author.avatarURL);
