@@ -1,25 +1,25 @@
 const Discord = require('discord.js');
 
 
-
+const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log('I am ready!');
 });
 client.on('message', message => {
-  if (message.content === 'y?ping') {
+  if (message.content === `${prefix}ping`) {
     message.channel.send('pong');
   }
 });
-const { Client, Attachment } = require('discord.js');
+const { Client, Attachment } 
 client.on('message', message => {
-  if (message.content === 'y?avatar') {
+  if (message.content === `${prefix}avatar`) {
     message.reply(message.author.avatarURL);
   }
 });
 client.on('message', message => {
-    if (message.content === 'y?rip') {
+    if (message.content === `${prefix}rip`) {
         const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
         message.channel.send(attachment);
     }
@@ -32,7 +32,7 @@ client.on('guildMemberAdd', member => {
 client.on('message', message => {
   if (!message.guild) return;
 
-  if (message.content.startsWith('y?kick')) {
+  if (message.content.startsWith(`${prefix}kick`)) {
     const user = message.mentions.users.first();
 
     if (user) {
@@ -63,7 +63,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
   if (!message.guild) return;
-  if (message.content.startsWith('y?ban')) {
+  if (message.content.startsWith(`${prefix}ban`)) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
@@ -100,15 +100,14 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (!message.guild) return;
-    if (message.content.startsWith('y?latency')) {
+    if (message.content.startsWith(`${prefix}latency`)) {
         message.channel.send(`${client.ping}ms`)
     }
-}};
+},);
 client.on('message', message => {
 	if (!message.guild) return;
-	if (message.content.startsWith('y?support')) {
+	if (message.content.startsWith(`${prefix}support`)) {
 		message.channel.send('https://discord.gg/6jJx4RX')
-}};
+}});
+client.login(token);
 
-
-client.login('BOTTOKEN')
