@@ -93,4 +93,23 @@ client.on('message', message => {
 if (message.content.startsWith(`${prefix}help`)) {
 message.channel.send('Here is my commands! All must be prefixed with y? help ping latency ban kick support rip')  
 }});
+client.on('message', message => {
+if (!message.guild) return;
+if (message.content.startsWith(`${prefix}botinfo`)) {
+message.channel.send({embed: {
+color: 3447003
+author: {
+name: client.user.username,
+icon_url: client.user.avatarURL
+},
+title: "Bot info",
+
+url: "https://sites.google.com/view/yellow-hat-bot/home",
+
+description: "Yellow Hat bot website",
+    
+fields: [{
+ name: "Yellow Hat Bot, version 1.0.0",
+value: "Yellow Hat is a bot created by DV54321#0385"
+},
 client.login(token);
