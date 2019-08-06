@@ -1,0 +1,31 @@
+{
+  "name": "YellowHat",
+  "version": "2.1.1",
+  "description": "NULL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "enginges": {
+    "node": "8.x"
+  },
+  "author": "Hego#0001 And DV54321#0385",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.5.0",
+    "dblapi.js": "^2.3.0",
+    "discord.js": "^11.5.0",
+    "discordbots-api": "0.0.2",
+    "diskusage": "^1.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "ioredis": "^4.10.0",
+    "opusscript": "^0.0.6",
+    "pretty-ms": "^5.0.0",
+    "request": "^2.88.0",
+    "systeminformation": "^4.11.4",
+    "uws": "^99.0.0"
+  },
+  "keywords": []
+}
